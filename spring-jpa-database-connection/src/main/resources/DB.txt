@@ -1,0 +1,91 @@
+
+server.port=7070
+spring.main.banner-mode=off
+
+#spring.jpa.hibernate.ddl-auto=update
+
+#spring.datasource.url=jdbc:oracle:thin:@localhost:1521/orcl
+#spring.datasource.data-username=lova
+#spring.datasource.data-password=lova
+#spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+#spring.datasource.hikari.connection-timeout=60000
+#spring.datasource.hikari.maximum-pool-size=5
+
+
+
+# create n drop tables, loads import.sql
+spring.jpa.hibernate.ddl-auto=update
+
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
+spring.datasource.username=lova
+spring.datasource.password=lova
+#spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+# HikariCP settings
+# spring.datasource.hikari.*
+
+#60 sec
+#spring.datasource.hikari.connection-timeout=6000
+# max 5
+#spring.datasource.hikari.maximum-pool-size=5
+
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+logging.level.org.hibernate.SQL=debug
+#logging.level.org.hibernate.type.descriptor.sql=trace
+logging.level.=error
+
+
+
+
+
+
+
+
+
+------------------------------------------------- DB --------------------------------------------- 
+
+select * from customer;
+
+
+CREATE TABLE CUSTOMER 
+(
+  ID NUMBER(38) NOT NULL 
+, NAME VARCHAR2(100) 
+, EMAIL VARCHAR2(100) 
+, CREATED_DATE DATE 
+, CONSTRAINT CUSTOMER_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+
+
+
+
+INSERT INTO "CUSTOMER" (ID, NAME, EMAIL, CREATED_DATE) VALUES(1, 'mkyong','111@yahoo.com', TO_DATE('2017-02-11', 'yyyy-mm-dd'));
+INSERT INTO "CUSTOMER" (ID, NAME, EMAIL, CREATED_DATE) VALUES(2, 'yflow','222@yahoo.com', TO_DATE('2017-02-12', 'yyyy-mm-dd'));
+INSERT INTO "CUSTOMER" (ID, NAME, EMAIL, CREATED_DATE) VALUES(3, 'zilap','333@yahoo.com', TO_DATE('2017-02-13', 'yyyy-mm-dd'));
+
+commit;
+
+
+drop table customer purge;
+
+--------------------------------------------------
+
+
+************* MySql Connections *************************
+
+User Name : root 
+Admin Password : Karuna@27862
+Port : 3306
+Local user : lova
+Local Password : Lova@27862
+
+Windows Service Name : MySQL80
+
+************* MySql Connections *************************
+
