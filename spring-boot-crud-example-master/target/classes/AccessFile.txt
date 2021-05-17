@@ -1,0 +1,28 @@
+http://localhost:9191/addProducts
+
+Post - Raw - Json
+
+
+[
+    {
+    "name": "Trimmer",
+    "quantity": 1,
+    "price": 6000.0
+},
+{
+    "name": "SandleWood",
+    "quantity": 2,
+    "price": 4530.0
+}
+]
+
+http://localhost:9191/addProduct
+
+
+{
+    "name": "Cooker",
+    "quantity": 2,
+    "price": 3000.0
+}
+
+
